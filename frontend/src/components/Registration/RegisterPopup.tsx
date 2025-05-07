@@ -2,16 +2,20 @@ import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import "./RegisterPopup.css"; // NEW: Separate CSS file
+import { useNavigate } from "react-router-dom";
+import Login from "../../pages/Login/Login";
 
 const RegisterPopup = ({ onClose }: { onClose: () => void }) => {
   const [formData, setFormData] = useState({ username: "", password: "" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const navigate = useNavigate();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -54,39 +58,26 @@ const RegisterPopup = ({ onClose }: { onClose: () => void }) => {
           {/* Username Input */}
           <input
             type="text"
-            name="Name of the organization"
-            placeholder="Name of the organization"
-            onChange={handleChange}
-            required
-            className="register-input"
-          />
-          <span className="input-icon-1">🏢</span>
-          </div>
-
-          <div className="input-container-1">
-          {/* Username Input */}
-          <input
-            type="text"
-            name="Contact Number"
-            placeholder="Contact  Number"
-            onChange={handleChange}
-            required
-            className="register-input"
-          />
-          <span className="input-icon-1">☎️</span>
-          </div>
-
-          <div className="input-container-1">
-          {/* Username Input */}
-          <input
-            type="text"
             name="username"
-            placeholder="Username"
+            placeholder="Full Name"
             onChange={handleChange}
             required
             className="register-input"
           />
           <span className="input-icon-1">👤</span>
+          </div>
+
+          <div className="input-container-1">
+          {/* Username Input */}
+          <input
+            type="text"
+            name="email"
+            placeholder="Email"
+            onChange={handleChange}
+            required
+            className="register-input"
+          />
+          <span className="input-icon-1">📧</span>
           </div>
 
           <div className="input-container-1">
@@ -103,14 +94,46 @@ const RegisterPopup = ({ onClose }: { onClose: () => void }) => {
           <span className="input-icon-1">🔒</span>
           </div>
 
+          <div className="input-container-1">
+          {/* Username Input */}
+          <input
+            type="text"
+            name="Contact Number"
+            placeholder="Phone Number"
+            onChange={handleChange}
+            required
+            className="register-input"
+          />
+          <span className="input-icon-1">☎️</span>
+          </div>
+
+
+          <div className="input-container-1">
+  <select
+    name="userType"
+    onChange={handleChange}
+    required
+    className="register-input"
+    defaultValue="" // Makes it unselected by default
+  >
+    <option value="" disabled>
+      Select User Type
+    </option>
+    <option value="Agent">🧑🏻‍💻 Agent</option>
+    <option value="Renter">🙎🏻‍♂️ Renter</option>
+  </select>
+</div>
+
+
+
           {/* Submit Button */}
           <motion.button type="submit" className="register-button">
             Submit
           </motion.button>
           <p className="register-text">Submitting the form will accept the  <span className="highlight">Terms & Conditions </span>and <span className="highlight">Privacy Policy</span></p>
           <hr/>
-          <p className="register-text">Already have credentials? <span className="highlight">Curator's Login</span></p>
-        </form>
+          <p className="register-text">Already have credentials ?     
+            <span onClick={() => navigate("/")}>  Sign up </span></p></form>
       </motion.div>
     </motion.div>
   );

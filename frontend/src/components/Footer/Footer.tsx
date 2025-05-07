@@ -1,11 +1,13 @@
 import "./Footer.css";
+import icon from "../../assets/images/real.png"
 
 const Footer = () => {
     return (
       <footer className="footer">
         <div className="footer-container">
           <div className="footer-section shop-title">
-            <h2>TRAVEL SHOP</h2>
+          <img src={icon} 
+        alt="Real Estate Logo" />
           </div>
   
           <div className="footer-section links">

@@ -42,11 +42,10 @@ const Home = () => {
       <header className="hero">
         <div className="overlay" style={{paddingLeft : "60px"}}>
           <div className="hero-content">
-            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br/>sed do eiusmod tempor incididunt ut labore </h2>
+            <h2>Find Your Dream Home </h2>
             <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br/> sed do eiusmod tempor incididunt ut labore et dolore<br/> magna aliqua
-            </p>
-            <button className="cta-button">Start Curating</button>
+            Explore the best properties at unbeatable prices.</p>
+            <button className="cta-button">Search Properties</button>
           </div>
         </div>
       </header>

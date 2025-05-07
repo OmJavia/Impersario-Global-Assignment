@@ -2,7 +2,7 @@
 .login-background {
     position: relative;
     height: 100vh;
-    background: url('../../assets/images/background.jpg') center/cover no-repeat;
+    background: url('../../assets/images/house.webp') center/cover no-repeat;
 }
 
 .login-overlay {
@@ -86,7 +86,7 @@
 .login-button {
     width: 100%; /* Same width as inputs */
     padding: 12px;
-    background: #ec1380;
+    background: #ec1313;
     color: white;
     border: none;
     border-radius: 25px;

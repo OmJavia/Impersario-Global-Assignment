@@ -1,18 +1,22 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./Navbar.css";
+import icon from "../../assets/images/real.png"
 
 const Navbar: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
-  const user = { email: "Omjavia18@gmail.com" };
+  const user = { email: "Settings" };
   const logout = () => {
     console.log("Logging out...");
     localStorage.removeItem("user"); 
     navigate("/"); 
   };
+  const settings = () => {
+    navigate("/settings")
+  }
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -29,11 +33,14 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="nav-left">
         <Link to="/" className="logo">
-          TRAVEL SHOP
+        <img src={icon} 
+        alt="Real Estate Logo" 
+        style={{ height: "60px", marginRight: "8px" }} />
         </Link>
         <div className="nav-links">
-          <Link to="/buy">Buy</Link>
-          <Link to="/curate">Curate</Link>
+          <Link to="/Home">Home</Link>
+          <Link to="/properties">Properties</Link>
+          <Link to="/agents">Agents</Link>
         </div>
       </div>
 
@@ -68,7 +75,12 @@ const Navbar: React.FC = () => {
 
             {dropdownOpen && (
               <div className="absolute right-0 mt-2 w-48 bg-white shadow-md rounded-md dropdown-menu">
-                <p className="p-2 text-gray-700">{user.email}</p>
+                <button
+                  onClick={settings}
+                  className="w-full p-2 text-left text-red-500 hover:bg-gray-100"
+                >
+                  Settings
+                  </button>
                 <hr />
                 <button
                   onClick={logout}
