@@ -40,7 +40,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <header className="hero">
-        <div className="overlay" style={{paddingLeft : "60px"}}>
+        <div className="overlay" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <div className="hero-content">
             <h2>Find Your Dream Home </h2>
             <p>
@@ -52,7 +52,7 @@ const Home = () => {
 
       {/* Feature Section */}
       <section className="features">
-        <h1 className="section-title">Lorem ipsum dolor sit amet</h1>
+        <h1 className="section-title">Discover Properties That Match Your Lifestyle</h1>
         <div className="feature-cards">
           <div className="feature-card">
           <HoverImage
@@ -60,15 +60,15 @@ const Home = () => {
         icon4={icon4}
         altText="Hover to change"
       />
-            <p>Lorem <span style={{fontWeight: "bold"}}>ipsum</span></p>
+            <p>Trending <span style={{fontWeight: "bold"}}>Properties</span></p>
           </div>
           <div className="feature-card">
             <img src={icon2} alt="Feature 2" />
-            <p>Lorem <span style={{fontWeight: "bold"}}>ipsum</span></p>
+            <p>New <span style={{fontWeight: "bold"}}>Listings</span></p>
           </div>
           <div className="feature-card">
             <img src={icon3} alt="Feature 3" />
-            <p>Lorem <span style={{fontWeight: "bold"}}>ipsum</span></p>
+            <p>Investment <span style={{fontWeight: "bold"}}>Opportunities</span></p>
           </div>
         </div>
       </section>
@@ -79,24 +79,24 @@ const Home = () => {
     {/* Left Section with Title & Button */}
     <div className="details-text">
       <h1>
-      Lorem ipsum <br/><span className="highlight">dolor</span> 
+      Find Your Perfect Property <br/><span className="highlight">Today</span> 
       </h1>
-      <button className="detail-button">sit amet</button>
+      <button className="detail-button">Get Started</button>
     </div>
 
     {/* Right Section with Boxes */}
     <div className="details-grid">
       <div className="detail-box">
         <h3>01</h3>
-        <p className="space">Sit Amet</p>
+        <p className="space">Easy Search</p>
       </div>
       <div className="detail-box highlight-box">
         <h3>02</h3>
-        <p className="space"><span className="bold">Lorem </span>Ipsum Dolor<br /> Sit Amet</p>
+        <p className="space"><span className="bold">Verified </span>Listings</p>
       </div>
       <div className="detail-box large-box">
         <h3>03</h3>
-        <p className="space">Consectetur <span className="bold">Adipiscing</span> Elit, Ut Labore<br/> Et Dolore</p>
+        <p className="space">Expert <span className="bold">Support</span> </p>
       </div>
     </div>
   </div>

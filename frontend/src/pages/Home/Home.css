@@ -32,7 +32,7 @@
 
 /* Hero Section */
 .hero {
-  background-image: url("../../assets/images/home.gif"); /* Ensure correct image path */
+  background-image: url("../../assets/images/house.gif"); /* Ensure correct image path */
   background-size: cover;
   background-position: center;
   color: white;
